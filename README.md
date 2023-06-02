@@ -44,7 +44,7 @@ In queste Feature quando parliamo di utenti facciamo riferimento a tutti quelli 
 
 ### 1 - ACCOUNT:
 ### 01
-*Feature*:  User Register
+*Feature*:  User Register:
                 L'utente si registra effettuando un'iscrizione a pagamento e viene riconosciuto come uno User. 
                 La registrazione necessita di:
                 - Nome
@@ -53,59 +53,59 @@ In queste Feature quando parliamo di utenti facciamo riferimento a tutti quelli 
                 - Email
                 - Password(requisiti minimi di sicurezza)
 ### 02
-*Feature*:  User Login
+*Feature*:  User Login:
                 L'utente accede e viene riconosciuto come User/Artista/TopArtista/Fan/TopFan. Tutti gli utenti sono degli User, ma oltre a questa categoria se ne possono aggiungere altre
 ### 03
-*Feature*:  User Logout
+*Feature*:  User Logout:
                 L'utente esce dal suo account e se vuole può loggarsi di nuovo o cambiare account
 ### 04
-*Feature*:  Ricordami
+*Feature*:  Ricordami:
                 L'utente che accede all'app, se ancora non l'ha fatto, ha la possibilità di cliccare su "ricordami" per salvare email e pw per i futuri accessi
 ### 05
-*Feature*:  Eliminare il proprio account
+*Feature*:  Eliminare il proprio account:
                 L'utente può eliminare il proprio account e non avere più accesso all'app
 ### 06
-*Feature*:  Centro Assistenza
+*Feature*:  Centro Assistenza:
                 Email a cui scrivere in caso di necessità
 
 ### 2 - RADUNO:
 ### 7
-*Feature*:  Crea Evento(raduno) da Artista
+*Feature*:  Crea Evento(raduno) da Artista:
                 L'artista può creare eventi di tipo raduno decidendo data e luogo. Non possono esserci limiti di posti o costi di accesso. Esso decide se possono accedervi tutti gli User o solo i Fan
 ### 8
-*Feature*:  Crea Evento(raduno) da Fan -> Fallimento
+*Feature*:  Crea Evento(raduno) da Fan -> Fallimento:
                 Il Fan non può creare raduni
 ### 9
-*Feature*:  Crea Evento(raduno) da User -> Fallimento
+*Feature*:  Crea Evento(raduno) da User -> Fallimento:
                 L'User non può creare raduni
 ### 10
-*Feature*:  Like
+*Feature*:  Like:
                 Possibilità di mettere like agli eventi raduno da User/TopFan, a seconda di chi può partecipare
 ### 11
-*Feature*:  Commenti
+*Feature*:  Commenti:
                 Possibilità di mettere commenti agli eventi raduno da User/TopFan, a seconda di chi può partecipare
 ### 12
-*Feature*:  Geolocalizzazione
+*Feature*:  Geolocalizzazione:
                 Possibilità di geolocalizzare un raduno solo per chi può partecipare all'evento, quindi User/Fan
 
 ### 3 - CONCERTO:
 ### 13
-*Feature*:  Crea Evento(concerto) da Artista
+*Feature*:  Crea Evento(concerto) da Artista:
                 L'artista può creare eventi di tipo concerto decidendo data, luogo e numero di posti disponibili. Esso decide se possono accedervi tutti gli User o solo i Fan
 ### 14
-*Feature*:  Crea Evento(concerto) da Fan -> Fallimento
+*Feature*:  Crea Evento(concerto) da Fan -> Fallimento:
                 Il Fan non può creare concerti
 ### 15
-*Feature*:  Crea Evento(concerto) da User -> Fallimento
+*Feature*:  Crea Evento(concerto) da User -> Fallimento:
                 L'User non può creare concerti
 ### 16
-*Feature*:  Like
+*Feature*:  Like:
                 Possibilità di mettere like agli eventi concerto da User/TopFan, a seconda di chi può partecipare
 ### 17
-*Feature*:  Commenti
+*Feature*:  Commenti:
                 Possibilità di mettere commenti agli eventi concerto da User/TopFan, a seconda di chi può partecipare
 ### 18
-*Feature*:  Geolocalizzazione
+*Feature*:  Geolocalizzazione:
                 Possibilità di geolocalizzare un concerto solo per chi può partecipare all'evento, quindi User/Fan
 
 ### 19
