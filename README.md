@@ -48,59 +48,77 @@ Lo status di Entusiast estende quello di Fan.
 Lo status di Fan o Entusiast è limitato al singolo artista e non viene esteso a tutti gli artisti.  
 Lo status di Fan o Entusiast può essere presente su più artisti __(Esempio: User a è Fan di Vasco Rossi, Fan di Lucio Battisti, Entusiast di Rino Gaetano, Entusiast di Franco Battiato)__.
 
-### 02
+### 01
 *Feature*:  User Login
                 L'utente accede tramite Spotify e gli vengono attribuiti i rispettivi status
-### 03
-*Feature*:  User Logout
-                L'utente esce dal suo account e se vuole può loggarsi di nuovo o cambiare account
-### 04
-*Feature*:  Ricordami
-                L'utente che accede all'app, se ancora non l'ha fatto, ha la possibilità di cliccare su "ricordami" per salvare email e pw per i futuri accessi
-### 05
-*Feature*:  Eliminare il proprio account
-                L'utente può eliminare il proprio account e non avere più accesso all'app
-### 06
-*Feature*:  Centro Assistenza
-                Email a cui scrivere in caso di necessità
 
-### 7
-*Feature*:  Crea Evento(raduno) da Artista
-                L'artista può creare eventi di tipo raduno decidendo data e luogo. Non possono esserci limiti di posti o costi di accesso. Esso decide se possono accedervi tutti gli User o solo i Fan
-### 8
-*Feature*:  Crea Evento(raduno) da Fan -> Fallimento
-                Il Fan non può creare raduni
-### 9
-*Feature*:  Crea Evento(raduno) da User -> Fallimento
-                L'User non può creare raduni
+### 02
+*Feature*:  User Logout
+                L'utente seleziona il tasto logout e ritorna sulla schermata di accesso iniziale
+
+### 03
+*Feature*:  Riconscimento Artista
+                L'utente accede tramite Spotify, vengono controllate le sue pubblicazioni e se rispecchiano i criteri acquisisce lo status di artista riguardo al proprio nome d'arte
+
+### 04
+*Feature*:  Riconscimento Fan
+                L'utente accede tramite Spotify, vengono controllati i suoi ascolti e se rispecchiano i criteri acquisisce lo status di fan riguardo i nomi degli artisti con cui combacia i requisiti
+
+### 05
+*Feature*:  Riconscimento Entusiast
+                L'utente accede tramite Spotify, vengono controllati i suoi ascolti e se rispecchiano i criteri acquisisce lo status di entusiast riguardo i nomi degli artisti con cui combacia i requisiti
+
+### 06
+*Feature*:  Crea Evento(raduno) da Artista -> Success
+                L'utente crea un evento selezionando artista, data e luogo. Se per l'artista selezionato ha lo status di artista può scegliere se includere solo entusiast o tutti i fan, se mettere un costo di ingresso e il numero di posti.
+
+### 07
+*Feature*:  Crea Evento(raduno) da Entusiast -> Success
+                L'utente crea un evento selezionando artista, data e luogo. Se per l'artista selezionato ha lo status di entusiast l'evento è aperto a tutti i fan, è gratuito e riporta il numero di posti massimi.
+
+### 08
+*Feature*:  Crea Evento(raduno) da Fan -> Fail
+                L'utente crea un evento selezionando artista, data e luogo. Se per l'artista selezionato ha lo status di fan non dovrebbe vedere tra le opzioni di creazione evento il nome di tale artista. Se per nessun artista ha lo status di artista o entusiast non dovrebbe vedere il pulsante "crea evento".
+
+### 09
+*Feature*:  Crea Evento(concerto) da Artista -> Success
+                L'utente crea un evento selezionando artista, data e luogo. Se per l'artista selezionato ha lo status di artista può scegliere come tipo di evento concerto, il tipo di fan a cui mostrare questo evento, il costo di ingresso e il numero di posti.
+
 ### 10
-*Feature*:  Like
-                Possibilità di mettere like agli eventi raduno da User/TopFan, a seconda di chi può partecipare
+*Feature*:  Crea Evento(concerto) da Entusiast -> Fail
+                L'utente crea un evento selezionando artista, data, luogo, tipo di evento concerto. Se per lo status di artista risulta non avere autori, non deve essere in grado di selezionare il tipo di evento fallendo. Se ha lo status di artista ma non per quell'artista non dovrebbe permettere di cambiare il tipo di evento fallendo.
+
 ### 11
-*Feature*:  Commenti
-                Possibilità di mettere commenti agli eventi raduno da User/TopFan, a seconda di chi può partecipare
+*Feature*:  Crea Evento raduno (Entusiast)
+                L'utente autorizzato seleziona il tasto crea evento, seleziona (se ha lo status di artista non vuoto) la voce raduno, seleziona un autore (il quale rientra nella lista dello stato entusiast), seleziona la data, il nome del posto dove si effettuerà l'evento, il numero di posti massimo, la mail su cui ricevere le iscrizioni, riempe la descrizione dell'evento. 
+
 ### 12
-*Feature*:  Geolocalizzazione
-                Possibilità di geolocalizzare un raduno solo per chi può partecipare all'evento, quindi User/Fan
+*Feature*:  Crea Evento raduno (Artista)
+                L'utente autorizzato seleziona il tasto crea evento, seleziona la voce raduno, seleziona l'autore per cui ha lo status di artista (se stesso), seleziona la data, il nome del posto dove si effettuerà l'evento, il numero di posti massimo, la mail su cui ricevere le iscrizioni, riempe la descrizione dell'evento, indica se l'evento ha un costo e se sì indica a quanto ammonta.
 
 ### 13
-*Feature*:  Crea Evento(concerto) da Artista
-                L'artista può creare eventi di tipo concerto decidendo data, luogo e numero di posti disponibili. Esso decide se possono accedervi tutti gli User o solo i Fan
+*Feature*:  x
+                x
+
 ### 14
-*Feature*:  Crea Evento(concerto) da Fan -> Fallimento
-                Il Fan non può creare concerti
+*Feature*:  x
+                x
+
 ### 15
-*Feature*:  Crea Evento(concerto) da User -> Fallimento
-                L'User non può creare concerti
+*Feature*:  x
+                x
+
 ### 16
-*Feature*:  Like
-                Possibilità di mettere like agli eventi concerto da User/TopFan, a seconda di chi può partecipare
+*Feature*:  x
+                x
+
 ### 17
-*Feature*:  Commenti
-                Possibilità di mettere commenti agli eventi concerto da User/TopFan, a seconda di chi può partecipare
+*Feature*:  x
+                x
+
 ### 18
-*Feature*:  Geolocalizzazione
-                Possibilità di geolocalizzare un concerto solo per chi può partecipare all'evento, quindi User/Fan
+*Feature*:  x
+                x
 
 ### 19
 *Feature*:  x
@@ -147,5 +165,65 @@ Lo status di Fan o Entusiast può essere presente su più artisti __(Esempio: Us
                 x
 
 ### 30
+*Feature*:  x
+                x
+
+### 31
+*Feature*:  x
+                x
+
+### 32
+*Feature*:  x
+                x
+
+### 33
+*Feature*:  x
+                x
+
+### 34
+*Feature*:  x
+                x
+
+### 35
+*Feature*:  x
+                x
+
+### 36
+*Feature*:  x
+                x
+
+### 37
+*Feature*:  x
+                x
+
+### 38
+*Feature*:  x
+                x
+
+### 39
+*Feature*:  x
+                x
+
+### 40
+*Feature*:  x
+                x
+
+### 41
+*Feature*:  x
+                x
+
+### 42
+*Feature*:  x
+                x
+
+### 43
+*Feature*:  x
+                x
+
+### 44
+*Feature*:  x
+                x
+
+### 45
 *Feature*:  x
                 x
