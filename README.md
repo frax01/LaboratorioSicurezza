@@ -1,7 +1,5 @@
 # LaboratorioSicurezza
 
-# LaboratorioSicurezza
-
 # Componenti del Gruppo di Lavoro
 *Micucci Simone 1934642*  
 *Martignoni Francesco 1934742*  
@@ -34,8 +32,8 @@ La user stories deve essere "SMART"
 
 *Rule*:     Per lo __status__ ci sono delle specifiche da rispettare
             *Artista*
-                Per passare da User/Fan a Artista bisogna aver pubblicato almeno una canzone. I Artista possono essere anche Fan
-            *Fan*
+                Per passare da User/Fan a Artista bisogna aver pubblicato almeno una canzone. L'artista può essere anche Fan
+            *Fan di un artista x*
                 Almeno 50 ore di ascolto
                 Almeno 2 album differenti
                 Almeno 10 canzoni differenti
@@ -47,16 +45,27 @@ In queste Feature quando parliamo di utenti facciamo riferimento a tutti quelli 
 ### 1 - ACCOUNT:
 ### 01
 *Feature*:  User Register:
-                L'utente si registra effettuando un'iscrizione a pagamento e viene riconosciuto come uno User. 
-                La registrazione necessita di:
-                - Nome
-                - Cognome
-                - Data di nascita(>=16)
-                - Email
-                - Password(requisiti minimi di sicurezza)
+                L'utente si registra effettuando un'iscrizione, viene riconosciuto come uno User. 
+                SCENARIO:
+                GIVEN sono nella homepage dell'app
+                WHEN clicco su "Registrati"
+                THEN si viene riportati alla pagina di registrazione
+                AND bisogna inserire:
+                    - Nome
+                    - Cognome
+                    - Data di nascita(>=16)
+                    - Email
+                    - Password(requisiti minimi di sicurezza)
+                WHEN clicco su "registrati"(e la registrazione è corretta)
+                THEN si viene reindirizzati alla homepage
+                AND viene visualizzato il mio nome al posto del pulsante "Registrati"
+                WHEN clicco su "Registrati"(e la registrazione non è corretta)
+                THEN ne viene segnalato l'errore 
+                AND si resta su quella pagina
+
 ### 02
 *Feature*:  User Login:
-                L'utente accede e viene riconosciuto come User/Artista/TopArtista/Fan/TopFan. Tutti gli utenti sono degli User, ma oltre a questa categoria se ne possono aggiungere altre
+                L'utente accede e viene riconosciuto come User/Fan/Artista
 ### 03
 *Feature*:  User Logout:
                 L'utente esce dal suo account e se vuole può loggarsi di nuovo o cambiare account
@@ -67,6 +76,9 @@ In queste Feature quando parliamo di utenti facciamo riferimento a tutti quelli 
 *Feature*:  Eliminare il proprio account:
                 L'utente può eliminare il proprio account e non avere più accesso all'app
 ### 06
+*Feature*:  Password dimenticata:
+                L'Utente non ricorda la password di login
+### 07
 *Feature*:  Centro Assistenza:
                 Email a cui scrivere in caso di necessità
 
