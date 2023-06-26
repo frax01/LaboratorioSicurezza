@@ -3,7 +3,6 @@
 # Componenti del Gruppo di Lavoro
 *Micucci Simone 1934642*  
 *Martignoni Francesco 1934742*  
-*Guidone Gennaro*  
 
 # Progetto Scelto
 Top Listener:
@@ -121,20 +120,20 @@ Lo status di Fan o Entusiast può essere presente su più artisti __(Esempio: Us
                 L'utente esegue il login, accede alla pagina principale, manda una post per mandare la mail di partecipazione dell'evento esclusivo di un artista di cui è fan, riceve una schermata di errore che invita al ricaricamento e porta alla schermata principale.
 
 ### 19
-*Feature*:  x
-                x
+*Feature*:  Ricevi iscrizione ad evento da organizzatore
+                L'utente organizzatore dell'evento riceve sulla mail designata per ricevere aggiornamenti, la notifica che un nuovo utente si è appena iscritto, la mail è una mail di default.
 
 ### 20
-*Feature*:  x
-                x
+*Feature*:  Ricevi aggiornamenti ad evento da iscritto
+                L'utente organizzatore decide di modificare l'evento da lui organizzato. L'utente iscritto viene notificato della modifica dell'evento e gli viene chiesto se desidera ancora restare inscritto all'evento, decide di disiscriversi clickando sul link e si disiscrive. (per restare iscritto basta ignorare la mail).
 
 ### 21
-*Feature*:  x
-                x
+*Feature*:  Mandi aggiornamenti ad evento da organizzatore
+                L'utente organizzatore dell'evento decide di andare sulla sezione eventi organizzati, seleziona un evento, clicka il tasto modifica e decide di modificare la descrizione e la data. Quando clicka sul bottone Salva riceve una mail riguardo le modifiche effettuate.
 
 ### 22
-*Feature*:  x
-                x
+*Feature*:  Ricevi aggiornamento sul numero di iscritti da organizzatore
+		Ogni 48h ricevi una mail di aggiornamento che ti avvisa del numero di iscritti all'evento che hai organizzato.
 
 ### 23
 *Feature*:  x
@@ -168,62 +167,3 @@ Lo status di Fan o Entusiast può essere presente su più artisti __(Esempio: Us
 *Feature*:  x
                 x
 
-### 31
-*Feature*:  x
-                x
-
-### 32
-*Feature*:  x
-                x
-
-### 33
-*Feature*:  x
-                x
-
-### 34
-*Feature*:  x
-                x
-
-### 35
-*Feature*:  x
-                x
-
-### 36
-*Feature*:  x
-                x
-
-### 37
-*Feature*:  x
-                x
-
-### 38
-*Feature*:  x
-                x
-
-### 39
-*Feature*:  x
-                x
-
-### 40
-*Feature*:  x
-                x
-
-### 41
-*Feature*:  x
-                x
-
-### 42
-*Feature*:  x
-                x
-
-### 43
-*Feature*:  x
-                x
-
-### 44
-*Feature*:  x
-                x
-
-### 45
-*Feature*:  x
-                x
