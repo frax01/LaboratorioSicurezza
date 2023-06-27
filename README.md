@@ -2,19 +2,26 @@
 
 # Componenti del Gruppo di Lavoro
 *Micucci Simone 1934642*  
-*Martignoni Francesco 1934742*  
-*Guidone Gennaro*  
+*Martignoni Francesco 1934742* 
 
-# Progetto Scelto
-Top Listener:
-Applicazione web dove ci si collega tramite il proprio account spotify.  
-In base a gli ultimi 12 mesi verrà valutato di chi siamo i più grandi fan.  
-Sulla base di questo verranno creati degli stati che permettono all'utente di vedere eventi esclusivi solo per i fan più accaniti,  
-tra cui raduni ed eventi esclusivi organizzati dall'artista stesso.  
-Gli artisti possono organizzare eventi di ogni tipo, i "Top Fan" possono organizzare raduni.  
-Tramite localizzazione vengono mostrati gli eventi in ordine di vicinanza.
+# Progetto Top Listener:
+Applicazione web dove ci si collega tramite il proprio account Spotify e si viene riconosciuti come utenti certo status.  
+Ad ogni accesso verrà valutato di quali Artisti siamo i più grandi Fan secondo dei criteri prestabiliti. Gli Artisti possono poi creare degli Eventi di tipo Raduno e solo i Fan di quell'Artista vi possono partecipare. Questi eventi verranno mostrati su una mappa attraverso la geolocalizzazione.
 
-# User stories
+__status__:
+    *Artista*:
+        L'Artista è considerato tale se ha pubblicato almeno una canzone
+    *Fan di un Artista x*:
+        Almeno 10 ore di ascolto di x
+    *Utente*:
+        Utente standard che non soddisfa i requisiti di Artista e Fan
+
+- Ogni account è un Utente
+- Ogni account può essere Fan di alcuni Artisti ma viene considerato come un Utente per gli Artisti di cui non è Fan
+- Ogni Artista può essere Fan di altri Artisti
+- Possono partecipare agli Eventi creati dagli Artisti solo i Fan di quell'Artista
+- Nella sezione Raduno si vedono sempre tutti i Raduni in programma
+- Non si può accedere al sito senza aver effettuato il Login
 
 ### sintassi di scrittura
 *Feature*
@@ -22,150 +29,106 @@ Rule
 Example/Scenario
     Given, When, Then, And, But, Or
 
-### come deve essere una user stories funzionale
-La user stories deve essere "SMART"
-- Specifica         (dettagli programmabili e non ambigui)
-- Misurabile        (misure deterministiche e non olistiche)
-- Raggiungibile     (complessità minima possibile)
-- Rilevante         (di valore per gli stakeholder)
-- Scadenzata        (limite temporale per velocizzare lo sviluppo)
-
-*Rule*:     Per lo __status__ ci sono delle specifiche da rispettare
-            *Artista*
-                Per passare da User/Fan a Artista bisogna aver pubblicato almeno una canzone. L'artista può essere anche Fan
-            *Fan di un artista x*
-                Almeno 50 ore di ascolto
-                Almeno 2 album differenti
-                Almeno 10 canzoni differenti
-            *User*
-                Utente standard che non soddisfa i requisiti di cui nelle altre categorie
-
-In queste Feature quando parliamo di utenti facciamo riferimento a tutti quelli che si sono registrati, indipendentemente poi dal loro status
-
-### 1 - ACCOUNT:
+### 1 - ACCESSO:
 ### 01
-*Feature*:  User Register:
-                L'utente si registra effettuando un'iscrizione, viene riconosciuto come uno User. 
-                SCENARIO:
-                GIVEN sono nella homepage dell'app
-                WHEN clicco su "Registrati"
-                THEN si viene riportati alla pagina di registrazione
-                AND bisogna inserire:
-                    - Nome
-                    - Cognome
-                    - Data di nascita(>=16)
-                    - Email
-                    - Password(requisiti minimi di sicurezza)
-                WHEN clicco su "registrati"(e la registrazione è corretta)
-                THEN si viene reindirizzati alla homepage
-                AND viene visualizzato il mio nome al posto del pulsante "Registrati"
-                WHEN clicco su "Registrati"(e la registrazione non è corretta)
-                THEN ne viene segnalato l'errore 
-                AND si resta su quella pagina
-
+*Feature*:  Login errato:
+                L'Utente prova ad accedere tramite Spotify ma sbaglia ad inserire le credenziali -> ERRORE, Riprovare
 ### 02
-*Feature*:  User Login:
-                L'utente accede e viene riconosciuto come User/Fan/Artista
+*Feature*:  Login corretto:
+                L'Utente accede tramite Spotify e si procede con il controllo dello status. Successivamente si viene reindirizzati sulla homepage
 ### 03
-*Feature*:  User Logout:
-                L'utente esce dal suo account e se vuole può loggarsi di nuovo o cambiare account
+*Feature*: Riconoscimento Fan
+                Dopo il login viene controllato se un Utente è un Fan
 ### 04
-*Feature*:  Ricordami:
-                L'utente che accede all'app, se ancora non l'ha fatto, ha la possibilità di cliccare su "ricordami" per salvare email e pw per i futuri accessi
+*Feature*: Riconoscimento Artista
+                Dopo il login viene controllato se un Utente è un'Artista
 ### 05
-*Feature*:  Eliminare il proprio account:
-                L'utente può eliminare il proprio account e non avere più accesso all'app
+*Feature*:  Logout:
+                L'Utente esce dall'account e si viene reindirizzati alla pagina di login iniziale
 ### 06
-*Feature*:  Password dimenticata:
-                L'Utente non ricorda la password di login
+*Feature*:  Ricordami:
+                L'Utente che accede all'app, se ancora non l'ha fatto, ha la possibilità di cliccare su "ricordami" per salvare email e pw per i futuri accessi
 ### 07
-*Feature*:  Centro Assistenza:
-                Email a cui scrivere in caso di necessità
+*Feature*:  Visualizzazione Artisti di cui si è Fan:
+                Non appena si accede all'applicazione vengono visualizzati sulla sinistra tutti gli Artisti di cui si è Fan
 
-### 2 - RADUNO:
-### 7
-*Feature*:  Crea Evento(raduno) da Artista:
-                L'artista può creare eventi di tipo raduno decidendo data e luogo. Non possono esserci limiti di posti o costi di accesso. Esso decide se possono accedervi tutti gli User o solo i Fan
-### 8
-*Feature*:  Crea Evento(raduno) da Fan -> Fallimento:
-                Il Fan non può creare raduni
-### 9
-*Feature*:  Crea Evento(raduno) da User -> Fallimento:
-                L'User non può creare raduni
+### 2 - VISIONE SEZIONE RADUNO:
+### 08
+*Feature*:  Sezione visita Raduno da Utente(cioè un Utente che non è Fan di nessun Artista):
+                Un Utente può visitare la sezione Raduno ma non può accedere nè selezionare nessuno di essi. Gli Eventi saranno visualizzati in modo più opaco
+### 09
+*Feature*:  Sezione visita Raduno da Fan:
+                Un Fan può visitare la sezione Raduno ma può accedere(e cliccare) solo ai Raduni di cui egli è Fan dell'Artista. Per tutti gli altri Raduni egli è considerato come un Utente e quindi saranno visualizzati opachi e non selezionabili
 ### 10
-*Feature*:  Like:
-                Possibilità di mettere like agli eventi raduno da User/TopFan, a seconda di chi può partecipare
+*Feature*:  Sezione visita Raduno da Artista:
+                Un'Artista, se è un Fan di un altro Artista x, può visitare la sezione Raduno e ci si comporta come nel caso Fan
+
+### 3 - SEZIONE CREA RADUNO:
 ### 11
-*Feature*:  Commenti:
-                Possibilità di mettere commenti agli eventi raduno da User/TopFan, a seconda di chi può partecipare
+*Feature*:  Sezione Crea Raduno da Utente:
+                Se si è solo Utente la sezione Crea Raduno è visibile, ma opaca e non selezionabile
 ### 12
-*Feature*:  Geolocalizzazione:
-                Possibilità di geolocalizzare un raduno solo per chi può partecipare all'evento, quindi User/Fan
-
-### 3 - CONCERTO:
+*Feature*:  Sezione Crea Raduno da Fan:
+                Se l'Utente è anche un Fan la sezione Crea Raduno è visibile, ma opaca e non selezionabile
 ### 13
-*Feature*:  Crea Evento(concerto) da Artista:
-                L'artista può creare eventi di tipo concerto decidendo data, luogo e numero di posti disponibili. Esso decide se possono accedervi tutti gli User o solo i Fan
+*Feature*:  Sezione Crea Raduno da Artista:
+                Se l'Utente è un'Artista la sezione Crea Raduno diventa ben visibile e selezionabile
 ### 14
-*Feature*:  Crea Evento(concerto) da Fan -> Fallimento:
-                Il Fan non può creare concerti
+*Feature*:  Crea Raduno da Artista:
+                L'Artista può creare eventi di tipo Raduno. Non ci sono limiti di posti o costi di accesso. Possono accedervi solo i Fan di quell'Artista. Quando si clicca sulla sezione apposita per creare il Raduno si apre un form con informazioni da inserire.
+                Le informazioni necessarie da inserire per il Raduno sono:
+                    - nome d'arte organizzatore
+                    - breve descrizione testuale(max 50 char) del tipo di Raduno(uscita disco, performance, video del nuovo singolo ecc)
+                    - data
+                    - orario
+                    - luogo
 ### 15
-*Feature*:  Crea Evento(concerto) da User -> Fallimento:
-                L'User non può creare concerti
+*Feature*:  Visualizzazione Raduno creato:
+                Una volta creato correttamente il Raduno si viene reindirizzati alla propria homepage e quel Raduno viene visualizzato lateralmente in una sezione apposita. In esso è presente anche un pulsante per modificare il Raduno o per cancellarlo
+
+### 4 - PARTECIPAZIONE RADUNO:
 ### 16
-*Feature*:  Like:
-                Possibilità di mettere like agli eventi concerto da User/TopFan, a seconda di chi può partecipare
+*Feature*:  Partecipazione Raduno da Fan:
+                Il Fan clicca sul Raduno per partecipare e deve iscriversi con:
+                    - nome
+                    - cognome
+                    - età(eventuali prerequisiti di età minima)
+                    - mail
 ### 17
-*Feature*:  Commenti:
-                Possibilità di mettere commenti agli eventi concerto da User/TopFan, a seconda di chi può partecipare
+*Feature*:  Controllo campi inseriti per i Fan:
+                Se un Fan cerca di iscriversi ad un Raduno e non soddisfa o non compila correttamente i campi richiesti ne viene segnalato l'errore. Altrimenti l'iscrizione procede con la mail di conferma e si viene reindirizzati alla homepage
 ### 18
-*Feature*:  Geolocalizzazione:
-                Possibilità di geolocalizzare un concerto solo per chi può partecipare all'evento, quindi User/Fan
-
+*Feature*:  Partecipazione Raduno da Artista:
+                L'Artista clicca sull'Raduno per partecipare e deve iscriversi con:
+                    - nome
+                    - cognome
+                    - età
+                    - mail
 ### 19
-*Feature*:  x
-                x
-
+*Feature*:  Controllo campi inseriti per gli Artisti:
+                Se un'Artista cerca di iscriversi ad un Raduno e non soddisfa o non compila correttamente i campi richiesti ne viene segnalato l'errore. Altrimenti l'iscrizione procede con la mail di conferma e si viene reindirizzati alla homepage
 ### 20
-*Feature*:  x
-                x
-
+*Feature*:  Conferma partecipazione al Raduno:
+                Il Fan che si è iscritto al Raduno correttamente riceve una mail(alla stessa usata per il login) con le informazioni di conferma per la partecipazione con:
+                    - nome d'arte organizzatore
+                    - breve descrizione testuale del tipo di Raduno(uscita disco, performance, video del nuovo singolo ecc)
+                    - data
+                    - orario
+                    - luogo
 ### 21
-*Feature*:  x
-                x
+*Feature*:  Nuovo partecipante al Raduno:
+                L'organizzatore del Raduno riceve una mail con le informazioni di un nuovo partecipante al Raduno ma senza nessun dato sul nuovo partecipante per mantenere la privacy
 
+### 5 - MODIFICA MODALITA RADUNO:
 ### 22
-*Feature*:  x
-                x
-
+*Feature*:  Modifica organizzazione Raduno:
+                L'organizzatore del Raduno può modificare quest'ultimo cliccando su di un apposito pulsante del Raduno che viene visualizzato lateralmente sulla homepage. Questo ci reindirizza allo stesso form di compilazione di quando si deve creare il Raduno ma con i campi precompilati. Una volta fatto il cambiamento si ritorna sulla homepage
 ### 23
-*Feature*:  x
-                x
-
+*Feature*:  Notifica di modifica organizzazione Raduno:
+                L'applicazione non appena un Raduno viene modificato manda un messaggio(mail broadcast) a tutti gli iscritti con i cambiamenti apportati. La mail viene mandata solo se c'è almeno un cambiamento nelle informazioni scritte
 ### 24
-*Feature*:  x
-                x
-
+*Feature*:  Cancellazione Raduno:
+                L'organizzatore del Raduno può eliminare quest'ultimo cliccando su di un apposito pulsante del Raduno che viene visualizzato lateralmente sulla homepage. Viene chiesta la conferma dell'operazione prima di procedere e una volta eliminato il Raduno scompare. Questa operazione viene fatta tutta sulla homepage
 ### 25
-*Feature*:  x
-                x
-
-### 26
-*Feature*:  x
-                x
-
-### 27
-*Feature*:  x
-                x
-
-### 28
-*Feature*:  x
-                x
-
-### 29
-*Feature*:  x
-                x
-
-### 30
-*Feature*:  x
-                x
+*Feature*:  Notifica di cancellazione Raduno:
+                L'applicazione non appena un Raduno viene cancellato manda un messaggio(mail broadcast) a tutti gli iscritti con la cancellazione del Raduno
