@@ -60,61 +60,60 @@ Example/Scenario
 ### 08
 *Feature*:  Sezione visita Raduno da Utente(cioè un account che non ha fatto l'accesso con Spotify):
                 Un Utente vede la sezione Raduno ma per visitarla una volta cliccata viene mostrato un popup di login di Spotify, altrimenti non vi può accedere
-### 08
+### 09
 *Feature*:  Sezione visita Raduno da Listener(cioè un Listener che non è Fan di nessun Artista):
                 Un Listener può visitare la sezione Raduno ma non può accedere nè selezionare nessuno di essi. Gli Eventi saranno visualizzati in modo più opaco
-### 09
+### 10
 *Feature*:  Sezione visita Raduno da Fan:
                 Un Fan può visitare la sezione Raduno ma può accedere(e cliccare) solo ai Raduni di cui egli è Fan dell'Artista. Per tutti gli altri Raduni egli è considerato come un Listener e quindi saranno visualizzati opachi e non selezionabili
-### 10
+### 11
 *Feature*:  Sezione visita Raduno da Artista:
                 Un'Artista, se è un Fan di un altro Artista x, può visitare la sezione Raduno e ci si comporta come nel caso Fan
 
 ### 3 - SEZIONE CREA RADUNO:
-### 11
+### 12
 *Feature*:  Sezione Crea Raduno da Listener:
                 Se si è solo Listener la sezione Crea Raduno è visibile, ma opaca e non selezionabile
-### 12
+### 13
 *Feature*:  Sezione Crea Raduno da Fan:
                 Se Il Listener è anche un Fan la sezione Crea Raduno è visibile, ma opaca e non selezionabile
-### 13
+### 14
 *Feature*:  Sezione Crea Raduno da Artista:
                 Se Il Listener è un'Artista la sezione Crea Raduno diventa ben visibile e selezionabile
-### 14
-*Feature*:  Crea Raduno da Artista:
-                L'Artista può creare eventi di tipo Raduno. Non ci sono limiti di posti o costi di accesso. Possono accedervi solo i Fan di quell'Artista. Quando si clicca sulla sezione apposita per creare il Raduno si apre un form con informazioni da inserire.
-                Le informazioni necessarie da inserire per il Raduno sono:
-                    - nome d'arte organizzatore
-                    - breve descrizione testuale(max 50 char) del tipo di Raduno(uscita disco, performance, video del nuovo singolo ecc)
-                    - data
-                    - orario
-                    - luogo
 ### 15
-*Feature*:  Visualizzazione Raduno creato:
+*Feature*:  Crea Raduno da Artista:  
+                L'Artista può creare eventi di tipo Raduno. Non ci sono limiti di posti o costi di accesso. Possono accedervi solo i Fan di quell'Artista. Quando si clicca sulla sezione apposita per creare il Raduno si apre un form con informazioni da inserire.  
+                Le informazioni necessarie da inserire per il Raduno sono:  
+                    - breve descrizione testuale(max 50 char) del tipo di Raduno(uscita disco, performance, video del nuovo singolo ecc)  
+                    - data  
+                    - orario  
+                    - luogo 
+### 17
+*Feature*:  Creazione Raduno da **Listener** -> Fail1:  
+                Il Listener non autorizzato(ad esempio con un link che gli viene mandato da un altro utente non autorizzato) prova a creare l'evento ma viene riportato alla homepage
+### 17
+*Feature*:  Creazione Raduno da **Listener** -> Fail2:
+                Il Listener manda una POST HTTP al server con le informazioni per creare un evento. Non viene creato l'evento e viene notificato dell'errore(ALERT)
+### 16
+*Feature*:  Visualizzazione Raduno creato:  
                 Una volta creato correttamente il Raduno si viene reindirizzati alla propria homepage e quel Raduno viene visualizzato lateralmente in una sezione apposita. In esso è presente anche un pulsante per modificare il Raduno o per cancellarlo
 
 ### 4 - PARTECIPAZIONE RADUNO:
-### 16
-*Feature*:  Partecipazione Raduno da Fan:
+### 17
+*Feature*:  Partecipazione Raduno da Fan:  
                 Il Fan clicca sul Raduno per partecipare e deve iscriversi con:
-                    - nome
-                    - cognome
                     - età(eventuali prerequisiti di età minima)
                     - mail
 ### 17
+*Feature*:  Partecipazione Raduno da **Listener** -> Fail1:  
+                Il Listener non autorizzato(ad esempio con un link che gli viene mandato da un altro utente non autorizzato) prova a visualizzare l'evento ma viene riportato alla homepage
+### 17
+*Feature*:  Partecipazione Raduno da **Listener** -> Fail2:
+                Il Listener manda una POST HTTP al server con le informazioni per partecipare ad un evento a cui non è autorizzato. Non viene iscritto all'evento e viene notificato dell'errore(ALERT)
+### 18
 *Feature*:  Controllo campi inseriti per i Fan:
                 Se un Fan cerca di iscriversi ad un Raduno e non soddisfa o non compila correttamente i campi richiesti ne viene segnalato l'errore. Altrimenti l'iscrizione procede con la mail di conferma e si viene reindirizzati alla homepage
-### 18
-*Feature*:  Partecipazione Raduno da Artista:
-                L'Artista clicca sull'Raduno per partecipare e deve iscriversi con:
-                    - nome
-                    - cognome
-                    - età
-                    - mail
 ### 19
-*Feature*:  Controllo campi inseriti per gli Artisti:
-                Se un'Artista cerca di iscriversi ad un Raduno e non soddisfa o non compila correttamente i campi richiesti ne viene segnalato l'errore. Altrimenti l'iscrizione procede con la mail di conferma e si viene reindirizzati alla homepage
-### 20
 *Feature*:  Conferma partecipazione al Raduno:
                 Il Fan che si è iscritto al Raduno correttamente riceve una mail(alla stessa usata per il login) con le informazioni di conferma per la partecipazione con:
                     - nome d'arte organizzatore
@@ -122,20 +121,20 @@ Example/Scenario
                     - data
                     - orario
                     - luogo
-### 21
+### 20
 *Feature*:  Nuovo partecipante al Raduno:
-                L'organizzatore del Raduno riceve una mail con le informazioni di un nuovo partecipante al Raduno ma senza nessun dato sul nuovo partecipante per mantenere la privacy
+                L'organizzatore del Raduno riceve una mail settimanalmente con le informazioni di quanti partecipanti ci sono al Raduno
 
 ### 5 - MODIFICA MODALITA RADUNO:
-### 22
+### 21
 *Feature*:  Modifica organizzazione Raduno:
                 L'organizzatore del Raduno può modificare quest'ultimo cliccando su di un apposito pulsante del Raduno che viene visualizzato lateralmente sulla homepage. Questo ci reindirizza allo stesso form di compilazione di quando si deve creare il Raduno ma con i campi precompilati. Una volta fatto il cambiamento si ritorna sulla homepage
-### 23
+### 22
 *Feature*:  Notifica di modifica organizzazione Raduno:
                 L'applicazione non appena un Raduno viene modificato manda un messaggio(mail broadcast) a tutti gli iscritti con i cambiamenti apportati. La mail viene mandata solo se c'è almeno un cambiamento nelle informazioni scritte
-### 24
+### 23
 *Feature*:  Cancellazione Raduno:
                 L'organizzatore del Raduno può eliminare quest'ultimo cliccando su di un apposito pulsante del Raduno che viene visualizzato lateralmente sulla homepage. Viene chiesta la conferma dell'operazione prima di procedere e una volta eliminato il Raduno scompare. Questa operazione viene fatta tutta sulla homepage
-### 25
+### 24
 *Feature*:  Notifica di cancellazione Raduno:
                 L'applicazione non appena un Raduno viene cancellato manda un messaggio(mail broadcast) a tutti gli iscritti con la cancellazione del Raduno
