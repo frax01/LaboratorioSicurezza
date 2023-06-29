@@ -128,11 +128,11 @@ __status__:
 **TEST VERTICALI:**
 
 **1** -> Fallimento creazione Raduno da Listener:  
-                Il Listener non autorizzato prova a creare il raduno(ad esempio con un link mandato da un altro utente autorizzato a crearlo) ma viene riportato alla homepage e viene notificato dell'errore 
+                Il Listener non autorizzato prova a creare il raduno(ad esempio con un link mandato da un altro utente autorizzato a crearlo) ma viene riportato alla homepage e viene notificato dell'errore  
 **2** -> Fallimento creazione Raduno da Listener:  
                 Il Listener manda una POST HTTP al server con le informazioni per creare un raduno. Non viene creato il raduno e l'utente viene notificato dell'errore
 
 **3** -> Fallimento partecipazione Raduno da Listener:  
-                Il Listener non autorizzato prova a visualizzare il raduno(ad esempio con un link mandato da un altro utente autorizzato a visualizzarlo) ma viene riportato alla homepage  e viene notificato dell'errore
+                Il Listener non autorizzato prova a visualizzare il raduno(ad esempio con un link mandato da un altro utente autorizzato a visualizzarlo) ma viene riportato alla homepage  e viene notificato dell'errore  
 **4** -> Fallimento partecipazione Raduno da Listener:  
                 Il Listener manda una POST HTTP al server con la richiesta di partecipazione ad un raduno a cui non è autorizzato a partecipare. Non viene iscritto il raduno e viene notificato dell'errore
